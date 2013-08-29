@@ -10,6 +10,8 @@ Update your license details here.
 
 # Attribution
 
+## `puppet-blank` for Puppet Module generation
+
 This module is derived from the puppet-blank module by Aaron Hicks (aethylred@gmail.com)
 
 * https://github.com/Aethylred/puppet-blank
@@ -17,6 +19,12 @@ This module is derived from the puppet-blank module by Aaron Hicks (aethylred@gm
 This module has been developed for the use with Open Source Puppet (Apache 2.0 license) for automating server & service deployment.
 
 * http://puppetlabs.com/puppet/puppet-open-source/
+
+## `puppet-bootstrap` for bootstrapping Puppet into Vagrant
+
+The Puppet bootstrap scripts are modified from the [Vagrant](http://www.vagrantup.com/) puppet-bootstrap scripts provided by Hashicorp.
+
+* https://github.com/hashicorp/puppet-bootstrap
 
 # Gnu General Public License
 
