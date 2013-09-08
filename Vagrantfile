@@ -9,9 +9,9 @@ Vagrant.configure("2") do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "centos-64-x64-4210-nocm"
+  config.vm.box = "centos-64-x64-vbox4210-nocm"
  
-  config.vm.provision :shell, :path => "puppet-bootstrap.sh"
+  config.vm.provision :shell, :path => "centos_6_x.sh"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.

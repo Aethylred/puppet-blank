@@ -26,6 +26,40 @@ The Puppet bootstrap scripts are modified from the [Vagrant](http://www.vagrantu
 
 * https://github.com/hashicorp/puppet-bootstrap
 
+The current `Vagrantfile` is configured to use the box [CentOS NoCM Virtualbox](http://puppet-vagrant-boxes.puppetlabs.com/centos-64-x64-vbox4210-nocm.box) from the [PuppetLabs box repository](http://puppet-vagrant-boxes.puppetlabs.com/)
+
+### Using the current Vagrant configuration
+
+* Add the Vagrant box to your collection: 
+
+```
+$ vagrant box add centos-64-x64-vbox4210-nocm http://puppet-vagrant-boxes.puppetlabs.com/centos-64-x64-vbox4210-nocm.box
+``` 
+
+*  Start the box: 
+
+```
+$ vagrant up
+```
+
+### Changing the Vagrant configuration
+
+To use a different Vagrant configuration, add a different base box to your collection and edit the Vagrantfile to specify it. If the base OS of the box is different, specify the correct Puppet bootstrap script by altering the line:
+
+```ruby
+  config.vm.box = "centos-64-x64-vbox4210-nocm"
+```
+
+### Testing the Puppet module
+
+Vagrant will mount the module directory from the host as `/vagrant` within the VM, so to run the smoke tests, logged in as root on the VM run:
+
+```
+$ puppet agent -t /vagrant/tests/init.pp
+```
+
+More complex Puppet modules (i.e. those with dependencies on other Puppet modules) may require additional configuration, such as installing dependent puppet modules and adding the `/vagrant` directory to the Puppet `modulepath`.
+
 # Gnu General Public License
 
 This file is part of the blank Puppet module.
