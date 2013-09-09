@@ -52,13 +52,22 @@ To use a different Vagrant configuration, add a different base box to your colle
 
 ### Testing the Puppet module
 
-Vagrant will mount the module directory from the host as `/vagrant` within the VM, so to run the smoke tests, logged in as root on the VM run:
+Vagrant will mount the module directory from the host as `/vagrant` within the VM, and these have to be added to the Puppet configuration. Add the `/vagrant` directory to the Puppet `modulepath` in `/etc/puppet/puppet.conf` to the `[main]` block:
 
 ```
-$ puppet agent -t /vagrant/tests/init.pp
+modulepath = $confdir/modules:/usr/share/puppet/modules:/vagrant/
 ```
 
-More complex Puppet modules (i.e. those with dependencies on other Puppet modules) may require additional configuration, such as installing dependent puppet modules and adding the `/vagrant` directory to the Puppet `modulepath`.
+**Note:** the module path separator is : in POSIX and ; under Windows.
+
+
+To run the smoke tests, logged in as root on the VM run:
+
+```
+$ puppet apply /vagrant/tests/init.pp
+```
+
+More complex Puppet modules (i.e. those with dependencies on other Puppet modules) may require additional configuration, such as installing the dependencies and adding them to the Puppet configuration.
 
 # Gnu General Public License
 
