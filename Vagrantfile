@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "centos-64-x64-vbox4210-nocm"
  
-  config.vm.provision :shell, :path => "centos_6_x.sh"
+  config.vm.provision :shell, :path => "bootstrap/centos_6_x.sh"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
