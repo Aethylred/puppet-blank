@@ -30,3 +30,6 @@ _ReSharper*/
 .project
 .vagrant/
 *~
+*.sublime-project
+*.sublime-workspace
+pkg/

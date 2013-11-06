@@ -13,6 +13,7 @@ Use this module to start a new blank puppet module with all the required compone
 	```
 	git clone -o puppet-blank -b master git://github.com/Aethylred/puppet-blank.git /path/to/new/repository
 	```
+1. Merge any `puppet-blank` feature branches that are required and resolve conflicts.
 1. Use the `unblank.ps1` script to customise the blank template
 1. Delete clean up blank with `cleanup.ps1`
 1. Commit changes
@@ -26,6 +27,12 @@ Use this module to start a new blank puppet module with all the required compone
 	```
 	git push origin master
 	```
+## Feature Branches
+
+The `puppet-blank` template has a number of  branches that can be merged in to add additional features to your Puppet module.
+
+* `rspec-augeas` This branch will update the Travis configuration to install [`rspec-puppet-augeas`](https://github.com/domcleal/rspec-puppet-augeas) which provides additional tests when using the Puppet [augeas resource](http://docs.puppetlabs.com/references/latest/type.html#augeas).
+* `vagrant` This branch adds a Vagrantfile and instructions on how to use [Vagrant](http://www.vagrantup.com/) to test your Puppet module on a local virtual machine.
 
 ## Windows scripts
 
