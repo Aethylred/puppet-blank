@@ -1,6 +1,12 @@
 Param($author,$module)
 if ($author -match "^\w+$") {
   if ($module -match "^\w+$") {
+    echo "Update README.md..."
+    $readme = Get-Content README.blank.md
+    $readme = Foreach-Object {$readme -replace "blank-blank", $module}
+    Set-Content README.md $readme
+    echo "Modulefile updated."
+
     echo "Update Modulefile..."
     $modulefile = Get-Content Modulefile.orig
     $modulefile = Foreach-Object {$modulefile -replace "aethylred", $author}
