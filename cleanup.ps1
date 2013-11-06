@@ -5,6 +5,7 @@ if ((Test-Path 'Modulefile') -and (Test-Path 'manifests/init.pp') -and (Test-Pat
   Remove-Item 'manifests/init.pp.orig'
   Remove-Item 'tests/init.pp.orig'
   Remove-Item 'README1st.markdown'
+  Remove-Item 'README.blank.md'
   Remove-Item '.fixtures.yml.orig'
   Remove-Item 'unblank.ps1'
   Remove-Item 'cleanup.ps1'
