@@ -1,0 +1,4 @@
+[submodule "bootstrap"]
+	path = bootstrap
+	url = https://github.com/hashicorp/puppet-bootstrap.git
+	branch = master
