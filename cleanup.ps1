@@ -1,8 +1,10 @@
 echo "Cleaning up template..."
-if ((Test-Path 'Modulefile') -and (Test-Path 'manifests/init.pp') -and (Test-Path 'tests/init.pp') -and (Test-Path '.fixtures.yml')){
+if ((Test-Path 'metadata.json') -and (Test-Path 'manifests/init.pp') -and (Test-Path 'manifests/params.pp') -and (Test-Path 'spec/classes/init_spec.rb') -and (Test-Path 'tests/init.pp') -and (Test-Path '.fixtures.yml')){
   echo "Deleting .orig templates..."
-  Remove-Item 'Modulefile.orig'
+  Remove-Item 'metadata.orig.json'
   Remove-Item 'manifests/init.pp.orig'
+  Remove-Item 'manifests/params.pp.orig'
+  Remove-Item 'spec/classes/init_spec.rb.orig'
   Remove-Item 'tests/init.pp.orig'
   Remove-Item 'README.markdown'
   Remove-Item 'README.blank.md'

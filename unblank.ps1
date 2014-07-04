@@ -7,18 +7,30 @@ if ($author -match "^\w+$") {
     Set-Content README.md $readme
     echo "Modulefile updated."
 
-    echo "Update Modulefile..."
-    $modulefile = Get-Content Modulefile.orig
-    $modulefile = Foreach-Object {$modulefile -replace "aethylred", $author}
+    echo "Update metadata.json..."
+    $modulefile = Get-Content metadata.orig.json
+    $modulefile = Foreach-Object {$modulefile -replace "authorauthor", $author}
     $modulefile = Foreach-Object {$modulefile -replace "blank", $module}
-    Set-Content Modulefile $modulefile
-    echo "Modulefile updated."
+    Set-Content metadata.json $modulefile
+    echo "metadata.json updated."
 
     echo "Update manifests/init.pp..."
     $initfile = Get-Content manifests/init.pp.orig
     $initfile = Foreach-Object {$initfile -replace "blank", $module}
     Set-Content manifests/init.pp $initfile
     echo "manifests/init.pp updated."
+
+    echo "Update manifests/params.pp..."
+    $initfile = Get-Content manifests/params.pp.orig
+    $initfile = Foreach-Object {$initfile -replace "blank", $module}
+    Set-Content manifests/params.pp $initfile
+    echo "manifests/params.pp updated."
+
+    echo "Update spec/classes/init_spec.rb..."
+    $initfile = Get-Content spec/classes/init_spec.rb.orig
+    $initfile = Foreach-Object {$initfile -replace "blank", $module}
+    Set-Content spec/classes/init_spec.rb $initfile
+    echo "spec/classes/init_spec.rb updated."
 
     echo "Update tests\init.pp..."
     $testfile = Get-Content tests/init.pp.orig

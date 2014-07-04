@@ -1,6 +1,6 @@
-# Class: blank
+# Class: blank::params
 #
-# This module manages blank
+# This class manages shared prameters and variables for the blank module
 #
 # Parameters:
 #
@@ -27,7 +27,14 @@
 #     along with the blank Puppet module.  If not, see <http://www.gnu.org/licenses/>.
 
 # [Remember: No empty lines between comments and class definition]
-class blank inherits blank::params {
+class blank::params {
 
-
+  case $::osfamily {
+    Debian:{
+      # Do nothing
+    }
+    default:{
+      fail("The blank Puppet module does not support ${::osfamily} family of operating systems")
+    }
+  }
 }
