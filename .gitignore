@@ -32,3 +32,4 @@ _ReSharper*/
 *.sublime-project
 *.sublime-workspace
 pkg/
+tests/secret*
