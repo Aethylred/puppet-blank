@@ -4,6 +4,8 @@ if ($author -match "^\w+$") {
     echo "Update README.md..."
     $readme = Get-Content README.blank.md
     $readme = Foreach-Object {$readme -replace "blank-blank", $module}
+    $readme = Foreach-Object {$modulefile -replace "authorauthor", $author}
+    $readme = Foreach-Object {$modulefile -replace "yearyear", Get-Date -format yyyy}
     Set-Content README.md $readme
     echo "Modulefile updated."
 

@@ -1,5 +1,6 @@
 language: ruby
 bundler_args: --without development
+sudo: false
 before_script:
   - bundle exec rake validate_puppet_syntax
   - bundle exec rake validate_ruby_syntax
