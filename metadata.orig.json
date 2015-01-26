@@ -2,7 +2,7 @@
   "name": "authorauthor-blank",
   "version": "0.0.1",
   "author": "authorauthor",
-  "license": "None",
+  "license": "GPL-3,0",
   "summary": "A module for installing and managing blank",
   "source": "https://github.com/authorauthor/puppet-blank",
   "project_page": "https://github.com/authorauthor/puppet-blank",
