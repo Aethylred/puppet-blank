@@ -2,7 +2,7 @@
   "name": "authorauthor-blank",
   "version": "0.0.1",
   "author": "authorauthor",
-  "license": "None",
+  "license": "Apache-2.0",
   "summary": "A module for installing and managing blank",
   "source": "https://github.com/authorauthor/puppet-blank",
   "project_page": "https://github.com/authorauthor/puppet-blank",
@@ -10,8 +10,8 @@
   "tags": ["blank"],
   "operatingsystem_support": [
     {
-    "operatingsystem": "Ubuntu",
-    "operatingsystemrelease": [ "12.04", "13.10" ]
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "12.04", "14.04" ]
     }
    ],
   "dependencies": [

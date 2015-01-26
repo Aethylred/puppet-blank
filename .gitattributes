@@ -12,6 +12,9 @@
 *.md text eol=lf
 *.yml text eol=lf
 *.erb text eol=lf
+*.json text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf
 *.markdown text eol=lf
 Gemfile text eol=lf
 Rakefile text eol=lf
