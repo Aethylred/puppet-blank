@@ -2,11 +2,11 @@
   "name": "authorauthor-blank",
   "version": "0.0.1",
   "author": "authorauthor",
-  "license": "Licensed under GPL3",
+  "license": "None",
   "summary": "A module for installing and managing blank",
-  "source": "https://github.com/authorauthor/blank",
-  "project_page": "https://github.com/authorauthor/blank",
-  "issues_url": "https://github.com/authorauthor/blank/issues",
+  "source": "https://github.com/authorauthor/puppet-blank",
+  "project_page": "https://github.com/authorauthor/puppet-blank",
+  "issues_url": "https://github.com/authorauthor/puppet-blank/issues",
   "tags": ["blank"],
   "operatingsystem_support": [
     {
