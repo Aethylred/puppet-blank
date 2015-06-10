@@ -1,6 +1,9 @@
 require 'puppetlabs_spec_helper/module_spec_helper'
+require 'rspec-puppet-facts'
+include RspecPuppetFacts
 
 RSpec.configure do |c|
+
   c.treat_symbols_as_metadata_keys_with_true_values = true
 
   c.before :each do
@@ -22,4 +25,28 @@ end
 
 shared_examples :compile, :compile => true do
   it { should compile.with_all_deps }
+end
+
+$supported_os = on_supported_os.map do |os, facts|
+  os_expects = {}
+  expects = {
+
+  }
+  case facts[:osfamily]
+  when 'Debian'
+    expects.merge!( {
+
+    } )
+  when 'RedHat'
+    expects.merge!( {
+
+    } )
+  end
+
+  os_expects = {
+    :os      => os,
+    :facts   => facts,
+    :expects => expects
+  }
+  os_expects
 end
